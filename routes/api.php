@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(static function (): void {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+
+    Route::prefix('game')
+        ->as('game.')
+        ->group(static function (): void {
+            Route::get('/', \App\Http\Controllers\Api\Game\IndexController::class)
+                ->name('index');
+        });
 });
