@@ -20,7 +20,8 @@ class Game extends Authenticatable
     protected $fillable = [
         'hash',
         'user_id',
-        'target',
+        'try',
+        'game_end_at'
     ];
 
     /**
@@ -38,8 +39,7 @@ class Game extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'game_id' => 'integer',
-        'game_started_at' => 'datetime'
+        'target' => 'integer'
     ];
 
     public function user(): BelongsTo{

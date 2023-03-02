@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Api\Game;
 
 use App\Actions\Game\GameAction;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Game\GameResource;
 use App\Models\Game;
 use App\Responses\Game\GameCollectionResponse;
 use Illuminate\Contracts\Support\Responsable;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\DataTransferObjects\Game\GameDataObject;
 use Illuminate\Support\Str;
@@ -41,6 +43,7 @@ class GameController extends Controller
     public function new(Request $request)
     {
         $game_hash = Str::random(42);
+
         (new GameAction)->handle(
             $game_hash,
             $request->user()->id
@@ -54,15 +57,19 @@ class GameController extends Controller
     /**
      * Play a round
      */
-    public function play(Request $request, $hash)
+    public function play(Request $request, $hash): JsonResponse
     {
         if (Game::where('hash', $hash)->exists()) {
-            dd($request->input('bet'));
+            $bet = $request->input('bet');
+            return (new GameAction)->gameResult(
+                $bet,
+                $hash
+            );
         }
 
         return response()->json([
-            'code' => 1,
-            'error' => "This game doesn't exist"
+            'code' => -1,
+            'message' => "This game doesn't exist"
         ]);
     }
 }

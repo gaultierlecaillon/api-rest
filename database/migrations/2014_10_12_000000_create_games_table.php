@@ -17,8 +17,8 @@ return new class extends Migration
             $table->String('hash');
             $table->foreignIdFor(User::class);
             $table->integer('target');
-            $table->timestamp('game_started_at')->nullable();
-            $table->rememberToken();
+            $table->integer('try');
+            $table->timestamp('game_end_at')->nullable();
             $table->timestamps();
         });
     }

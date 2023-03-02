@@ -19,10 +19,10 @@ class GameFactory extends Factory
     public function definition(): array
     {
         return [
-            'target' => 152,
+            'target' => rand(1,10000),
             'hash' => Str::random(42),
             'user_id' => 1,
-            'game_started_at' => now(),
+            'try' => 0,
             'created_at' => now(),
         ];
     }
