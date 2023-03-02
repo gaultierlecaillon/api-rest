@@ -20,6 +20,7 @@ class GameFactory extends Factory
     {
         return [
             'target' => 152,
+            'hash' => Str::random(42),
             'user_id' => 1,
             'game_started_at' => now(),
             'created_at' => now(),

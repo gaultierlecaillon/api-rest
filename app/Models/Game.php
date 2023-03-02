@@ -18,8 +18,9 @@ class Game extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'id',
-        'user_id'
+        'hash',
+        'user_id',
+        'target',
     ];
 
     /**

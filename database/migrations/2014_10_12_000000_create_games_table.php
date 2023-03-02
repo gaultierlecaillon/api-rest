@@ -14,10 +14,11 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->String('hash');
+            $table->foreignIdFor(User::class);
             $table->integer('target');
             $table->timestamp('game_started_at')->nullable();
             $table->rememberToken();
-            $table->foreignIdFor(User::class);
             $table->timestamps();
         });
     }

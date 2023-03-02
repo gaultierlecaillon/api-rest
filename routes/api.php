@@ -24,5 +24,8 @@ Route::middleware('auth:sanctum')->group(static function (): void {
         ->group(static function (): void {
             Route::get('/', \App\Http\Controllers\Api\Game\IndexController::class)
                 ->name('index');
+
+            Route::get('/play', \App\Http\Controllers\Api\Game\GameController::class)
+                ->name('play');
         });
 });
