@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Game\GameController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +26,10 @@ Route::middleware('auth:sanctum')->group(static function (): void {
             Route::get('/', \App\Http\Controllers\Api\Game\IndexController::class)
                 ->name('index');
 
-            Route::get('/play', \App\Http\Controllers\Api\Game\GameController::class)
+            Route::get('/new', [GameController::class, 'new'])->name('new');
+
+
+            Route::post('/play/{hash}', [GameController::class, 'play'])
                 ->name('play');
         });
 });

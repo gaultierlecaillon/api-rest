@@ -34,4 +34,35 @@ class GameController extends Controller
             'hash' => $game_hash
         ]);
     }
+
+    /**
+     * Create a new game
+     */
+    public function new(Request $request)
+    {
+        $game_hash = Str::random(42);
+        (new GameAction)->handle(
+            $game_hash,
+            $request->user()->id
+        );
+
+        return response()->json([
+            'hash' => $game_hash
+        ]);
+    }
+
+    /**
+     * Play a round
+     */
+    public function play(Request $request, $hash)
+    {
+        if (Game::where('hash', $hash)->exists()) {
+            dd($request->input('bet'));
+        }
+
+        return response()->json([
+            'code' => 1,
+            'error' => "This game doesn't exist"
+        ]);
+    }
 }
