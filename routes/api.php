@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Api\Game\GameController;
+use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +35,5 @@ Route::middleware('auth:sanctum')->group(static function (): void {
                 ->name('play');
         });
 });
+
+Route::post('/login', [AuthController::class, 'loginUser']);

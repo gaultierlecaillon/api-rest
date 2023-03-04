@@ -38,5 +38,5 @@ Route::post('auth/login', function (Request $request) {
 */
 
 
-Route::post('/auth/login', [AuthController::class, 'loginUser']);
+
 

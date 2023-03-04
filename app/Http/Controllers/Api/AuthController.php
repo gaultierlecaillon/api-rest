@@ -32,11 +32,7 @@ class AuthController extends Controller
                 ], 401);
             }
 
-            //$pwd = "123456";
-            //$hashed = Hash::make($pwd);
-            //dd(Hash::check($pwd, '$2y$10$TBRtbPZfepCRNVVfdeBDPOn1IpMqV.47H20lvonvOoYgN9UzYDnJ6'));
-
-            if(!Auth::attempt(['username' => 'john', 'password' => '123456'])){
+            if(!Auth::attempt($request->only(['username', 'password']))){
                 return response()->json([
                     'status' => false,
                     'message' => 'Username & Password does not match with our record.',
