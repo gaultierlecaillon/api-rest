@@ -13,10 +13,12 @@ class GameAction
         $userId
     ): void
     {
-        Game::create([ //same as Game fillable
+        //same field as Game fillable
+        Game::create([
             'hash' => $gameHash,
             'user_id' => $userId,
             'target' => rand(1, 10000),
+            'try' => 0,
         ]);
     }
 

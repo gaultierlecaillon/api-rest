@@ -20,6 +20,7 @@ class Game extends Authenticatable
     protected $fillable = [
         'hash',
         'user_id',
+        'target',
         'try',
         'game_end_at'
     ];
