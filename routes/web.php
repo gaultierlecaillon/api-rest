@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +20,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get(
     uri: 'login',
-    action: static fn () => \App\Models\User::firstOrFail()->createToken('auth_token')->plainTextToken,
+    action: static fn () => User::firstOrFail()->createToken('auth_token')->plainTextToken,
 )->name("login");
+
+
+/*
+Route::post('auth/login', function (Request $request) {
+    $token = $request->session()->token();
+    $token = csrf_token();
+    $data = $request ->json()->all();
+    dd($data);
+    return User::where('name', 'john')->firstOrFail();
+});
+*/
+
+
+Route::post('/auth/login', [AuthController::class, 'loginUser']);
+
