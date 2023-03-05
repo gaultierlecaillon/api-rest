@@ -16,13 +16,23 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'username' => 'john',
+            'username' => 'Valentin',
             'password' => Hash::make('123456'),
         ]);
 
         DB::table('users')->insert([
-            'username' => 'mike',
+            'username' => 'Thomas',
             'password' => Hash::make('123456'),
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'Gaultier',
+            'password' => Hash::make('123456'),
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'admin',
+            'password' => Hash::make('admin'),
         ]);
 
 

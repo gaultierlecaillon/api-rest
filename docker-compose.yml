@@ -1,0 +1,41 @@
+version: '3.5'
+services:
+    api-rest-web:
+        container_name: api-rest-web
+        depends_on:
+            - api-rest-php
+        build:
+            context: .
+            dockerfile: .docker/local/web/rest-api-web.dockerfile
+        ports:
+            - '80:80'
+        volumes:
+            - type: bind
+              source: .
+              target: /var/www/html
+
+    api-rest-php:
+        container_name: api-rest-php
+        build:
+            context: .
+            dockerfile: .docker/local/php/api-rest-php.dockerfile
+        volumes:
+            - type: bind
+              source: .
+              target: /var/www/html
+
+    api-rest-db:
+        container_name: api-rest-db
+        image: 'mariadb:10.5'
+        ports:
+            - '3306:3306'
+        volumes:
+            - type: bind
+              source: .docker/local/db/data
+              target: /var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=laravel
+            - MYSQL_USER=guess
+            - MYSQL_PASSWORD=root
+            - TZ=Europe/Paris
