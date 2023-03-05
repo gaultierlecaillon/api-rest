@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+    api-rest-web:
+        container_name: api-rest-web
+        image: gaultierle/api-rest-web:latest
+        ports:
+            - '80:80'
+
+    api-rest-php:
+        container_name: api-rest-php
+        image: gaultierle/api-rest-php:latest

@@ -6,7 +6,7 @@ services:
             - api-rest-php
         build:
             context: .
-            dockerfile: .docker/local/web/rest-api-web.dockerfile
+            dockerfile: .docker/local/web/api-rest-web.dockerfile
         ports:
             - '80:80'
         volumes:
