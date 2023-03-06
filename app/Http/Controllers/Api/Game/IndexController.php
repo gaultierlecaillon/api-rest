@@ -13,6 +13,8 @@ class IndexController extends Controller
 {
     /**
      * Handle the incoming request.
+     * @param Request $request
+     * @return App\Responses\Game\GameCollectionResponse
      */
     public function __invoke(Request $request): GameCollectionResponse
     {

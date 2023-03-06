@@ -20,11 +20,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get(
-    uri: 'login',
-    action: static fn () => User::firstOrFail()->createToken('auth_token')->plainTextToken,
-)->name("login");
-
-
-

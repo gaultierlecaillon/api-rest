@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\Game\GameController;
+use App\Http\Controllers\Api\Game\IndexController;
 use App\Http\Controllers\Api\AuthController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,22 +18,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->group(static function (): void {
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
 
     Route::prefix('game')
         ->as('game.')
         ->group(static function (): void {
-            Route::get('/', \App\Http\Controllers\Api\Game\IndexController::class)
-                ->name('index');
+
+            Route::get('/', IndexController::class)->name('index');
 
             Route::get('/new', [GameController::class, 'new'])->name('new');
 
+            Route::post('/play/{hash}', [GameController::class, 'play'])->name('play');
 
-            Route::post('/play/{hash}', [GameController::class, 'play'])
-                ->name('play');
         });
 });
 
-Route::post('/login', [AuthController::class, 'loginUser']);
+Route::post('/login', [AuthController::class, 'loginUser'])->name('login');

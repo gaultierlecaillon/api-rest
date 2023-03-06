@@ -56,7 +56,7 @@ class GameAction
             'code' => 0,
             'hash' => $game->hash,
             'try' => $game->try,
-            'target' => $game->target,
+            'target' => $game->target, // for dev and demo purpose
             'started_at' => $game->created_at,
             'message' => "The number is greater than " . $bet
         ]);
@@ -68,7 +68,7 @@ class GameAction
             'code' => 0,
             'hash' => $game->hash,
             'try' => $game->try,
-            'target' => $game->target,
+            'target' => $game->target, // for dev and demo purpose
             'started_at' => $game->created_at,
             'message' => "The number is less than " . $bet
         ]);
@@ -80,7 +80,7 @@ class GameAction
             'code' => 1,
             'hash' => $game->hash,
             'try' => $game->try,
-            'target' => $game->target,
+            'target' => $game->target, // for dev and demo purpose
             'started_at' => $game->created_at,
             'message' => "Congratulation, you won ! $bet is a match"
         ]);

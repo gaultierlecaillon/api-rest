@@ -17,15 +17,11 @@ class GameController extends Controller
 {
     /**
      * Handle the incoming request /api/game/play
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function __invoke(Request $request)
     {
-        /*
-        dd($request);
-        $gameDto = new GameDataObject(
-            action: $request->action,
-        );
-        */
         $game_hash = Str::random(42);
         (new GameAction)->handle(
             $game_hash,
@@ -39,6 +35,8 @@ class GameController extends Controller
 
     /**
      * Create a new game
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function new(Request $request)
     {
@@ -56,6 +54,8 @@ class GameController extends Controller
 
     /**
      * Play a round
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function play(Request $request, $hash): JsonResponse
     {

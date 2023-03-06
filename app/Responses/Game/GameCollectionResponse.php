@@ -11,7 +11,7 @@ class GameCollectionResponse implements \Illuminate\Contracts\Support\Responsabl
 {
     public function __construct(
         private readonly GameCollectionResponse|LengthAwarePaginator $collection,
-        private readonly int        $status = 200,
+        private readonly int                                         $status = 200,
     )
     {
     }
