@@ -59,17 +59,40 @@ class GameController extends Controller
      */
     public function play(Request $request, $hash): JsonResponse
     {
-        if (Game::where('hash', $hash)->exists()) {
-            $bet = $request->input('bet');
-            return (new GameAction)->gameResult(
-                $bet,
-                $hash
-            );
+        if (!Game::where('hash', $hash)->exists()) {
+            return response()->json([
+                'code' => -1,
+                'message' => "This game doesn't exist"
+            ]);
         }
 
-        return response()->json([
-            'code' => -1,
-            'message' => "This game doesn't exist"
-        ]);
+        if (!Game::where('hash', $hash)->where('user_id', $request->user()->id)->exists()) {
+            return response()->json([
+                'code' => -4,
+                'message' => "This game doesn't belong to you"
+            ]);
+        }
+
+        $bet = $request->input('bet');
+        if (!is_numeric($bet)){
+            return response()->json([
+                'code' => -2,
+                'message' => "The guess value should be numeric"
+            ]);
+        }
+
+        if ($bet <= 0 || 10000 < $bet){
+            return response()->json([
+                'code' => -3,
+                'message' => "The guess value should be between 1 and 10000"
+            ]);
+        }
+
+        return (new GameAction)->gameResult(
+            $bet,
+            $hash
+        );
+
+
     }
 }

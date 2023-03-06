@@ -35,47 +35,54 @@ class GameAction
     public function gameResult($bet, $hash): JsonResponse
     {
         $game = Game::where('hash', $hash)->firstOrFail();
-        $target = $game->target;
         $game->increment('try');
-        $game->update(['game_end_at' => now()]);
-
 
         // Greater than
-        if ($bet < $target) {
-            return $this->greaterThan($bet);
-        }
-        // Less than
-        elseif ($bet > $target) {
-            return $this->lessThan($bet);
+        if ($bet < $game->target) {
+            return $this->greaterThan($bet, $game);
+        } // Less than
+        elseif ($bet > $game->target) {
+            return $this->lessThan($bet, $game);
         }
 
         // Win
-        return $this->win($bet);
+        $game->update(['game_end_at' => now()]);
+        return $this->win($bet, $game);
     }
 
-    public function greaterThan(
-        $bet
-    ): JsonResponse
+    public function greaterThan($bet, $game): JsonResponse
     {
         return response()->json([
             'code' => 0,
-            'message' => "Greater than " . $bet
+            'hash' => $game->hash,
+            'try' => $game->try,
+            'target' => $game->target,
+            'started_at' => $game->created_at,
+            'message' => "The number is greater than " . $bet
         ]);
     }
 
-    public function lessThan($bet): JsonResponse
+    public function lessThan($bet, $game): JsonResponse
     {
         return response()->json([
             'code' => 0,
-            'message' => "Less than " . $bet
+            'hash' => $game->hash,
+            'try' => $game->try,
+            'target' => $game->target,
+            'started_at' => $game->created_at,
+            'message' => "The number is less than " . $bet
         ]);
     }
 
-    public function win($bet): JsonResponse
+    public function win($bet, $game): JsonResponse
     {
         return response()->json([
             'code' => 1,
-            'message' => "You Won ! $bet is a match"
+            'hash' => $game->hash,
+            'try' => $game->try,
+            'target' => $game->target,
+            'started_at' => $game->created_at,
+            'message' => "Congratulation, you won ! $bet is a match"
         ]);
     }
 }
