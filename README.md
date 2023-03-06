@@ -1,66 +1,203 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
 
-## About Laravel
+  <img src="https://raw.githubusercontent.com/Louis3797/awesome-readme-template/main/assets/logo.png" alt="logo" width="200" height="auto" />
+  <h1>Guess the number</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  <p>
+    Play and have fun !
+  </p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<h4>
+    <a href="https://jolly-plant-0dd118c03.2.azurestaticapps.net">View Demo</a>
+  <span> · </span>
+    <a href="https://github.com/gaultierlecaillon/api-rest#readme">Documentation</a>
+  </h4>
+</div>
 
-## Learning Laravel
+<br />
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<!-- Table of Contents -->
+# :notebook_with_decorative_cover: Table of Contents
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- [:notebook\_with\_decorative\_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
+    - [:star2: About the Project](#star2-about-the-project)
+        - [:camera: Screenshots](#camera-screenshots)
+        - [:space\_invader: Tech Stack](#space_invader-tech-stack)
+        - [:dart: Features](#dart-features)
+    - [:toolbox: Getting Started - Frontend Service :desktop\_computer:](#toolbox-getting-started---frontend-service-desktop_computer)
+        - [:bangbang: Prerequisites](#bangbang-prerequisites)
+        - [:gear: Installation](#gear-installation)
+        - [:running: Run Locally](#running-run-locally)
+        - [:triangular\_flag\_on\_post: Deployment](#triangular_flag_on_post-deployment)
+    - [:compass: Roadmap](#compass-roadmap)
+    - [:toolbox: Getting Started - Backend Service :abacus:](#toolbox-getting-started---backend-service-abacus)
+        - [:bangbang: Prerequisites](#bangbang-prerequisites-1)
+        - [:gear: Installation](#gear-installation-1)
+        - [:running: Run Locally](#running-run-locally-1)
+        - [:triangular\_flag\_on\_post: Deployment](#triangular_flag_on_post-deployment-1)
+    - [:compass: Roadmap](#compass-roadmap-1)
+    - [:handshake: Contact](#handshake-contact)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<!-- About the Project -->
+## :star2: About the Project
 
-## Laravel Sponsors
+<!-- Screenshots -->
+### :camera: Screenshots
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<div align="center">
+  <img src="https://i.postimg.cc/ncWztRHg/screenshot.png" alt="screenshot" />
+</div>
 
-### Premium Partners
+<!-- TechStack -->
+### :space_invader: Tech Stack
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://mui.com/">MUI React</a></li>
+  </ul>
+</details>
 
-## Contributing
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://laravel.com/">Laravel</a></li>
+  </ul>
+</details>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://azure.microsoft.com/en-us/products/mysql/">Azure MySQL server</a></li>
+  </ul>
+</details>
 
-## Code of Conduct
+<details>
+<summary>Hosting</summary>
+  <ul>
+    <li><a href="https://azure.microsoft.com/en-us/products/app-service/static">Azure Static Web App</a></li>
+    <li><a href="https://azure.microsoft.com/fr-fr/products/app-service">Azure App Service</a></li>
+  </ul>
+</details>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<!-- Features -->
+### :dart: Features
 
-## License
+- You can login via the API
+- You can start a game from the client UI
+- You can guess the number of the game
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+<!-- Getting Started -->
+## :toolbox: Getting Started - Frontend Service :desktop_computer:
+
+<!-- Prerequisites -->
+### :bangbang: Prerequisites
+
+This project uses Node.js
+
+```bash
+node -v # Should be more than node 16
+
+
+```
+<!-- Installation -->
+### :gear: Installation
+
+Install the project with npm
+
+```bash
+  npm install
+```
+
+
+<!-- Run Locally -->
+### :running: Run Locally
+
+Start the server
+
+```bash
+  npm run start
+```
+
+<!-- Deployment -->
+### :triangular_flag_on_post: Deployment
+
+The deployment is automatically done with Azure Static Apps and Github Actions on git push over main branch
+
+```bash
+  git push
+```
+
+<!-- Roadmap -->
+## :compass: Roadmap
+
+- [ ] Redo the frontend UI
+- [ ] Add Cypress
+- [ ] Display leaderboard
+
+<!-- Getting Started -->
+## :toolbox: Getting Started - Backend Service :abacus:
+
+<!-- Prerequisites -->
+### :bangbang: Prerequisites
+
+This project uses docker :whale2:, compose and php
+
+```bash
+php -v # Should be php8
+```
+
+```bash
+#Install composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
+
+<!-- Installation -->
+### :gear: Installation
+
+Install the project with npm
+
+```bash
+  cd api-rest
+  composer install
+```
+
+<!-- Run Locally -->
+### :running: Run Locally
+
+Start docker compose
+
+```bash
+  docker-compose up
+```
+
+<!-- Deployment -->
+### :triangular_flag_on_post: Deployment
+
+The deployment is done on Azure App Service - docker-compose by using DockerHub registry.
+You can use it like so
+```bash
+  docker build . -t registry/image:tag
+```
+
+<!-- Roadmap -->
+## :compass: Roadmap
+
+- [ ] Add new features to auto resolve game
+- [ ] Add more tests
+
+<!-- Contact -->
+## :handshake: Contact
+
+Gaultier Lecaillon
+
+
